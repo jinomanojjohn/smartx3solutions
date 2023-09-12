@@ -28,7 +28,8 @@
             background-image: url('./assets/img/download.png');
             padding: 125px 0;
         }
-        .cont{
+
+        .cont {
             border-radius: 25px;
         }
 
@@ -45,10 +46,10 @@
     <div>
 
     </div>
-    <!-- Navbar --> 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand font-weight-bolder" href="#"> 
+            <a class="navbar-brand font-weight-bolder" href="#">
                 <!-- <span class="text-danger">Smart X</span><span>3Solutions</span> -->
                 <img src="./assets/img/SMART X3 NEW LOGO.png" height="70px" alt="Smart X3 Solutions">
             </a>
@@ -80,7 +81,7 @@
         <div class="text-right align-items-end">
             <h1 class="display-4 font-weight-bolder">Secure Your </h1>
             <h1 class="display-4 font-weight-bolder text-danger"> World</h1>
-            <p class="lead font-weight-normal">A Complete Home & Business  <br> Security Solutions</p>
+            <p class="lead font-weight-normal">A Complete Home & Business <br> Security Solutions</p>
             <a class="btn btn-dark btn-lg font-weight-bolder cont" href="#contact" role="button">Contact Us</a>
         </div>
 
@@ -166,8 +167,10 @@
             <div class="row  d-flex py-5">
                 <div class="col-md-6 py-lg-5">
                     <h5>Contact Information</h5>
-                    <p><strong>Phone:</strong> <a class="text-dark" href="tel:+919633367947">(+91) 9633367947</a>  , <a class="text-dark" href="tel:+919072272248"> (+91) 9072272248</a></p>
-                    <p><strong>Email:</strong> <a class="text-dark" href="mailto:info.smartx3solutions@gmail.com">info.smartx3solutions@gmail.com</a> </p>
+                    <p><strong>Phone:</strong> <a class="text-dark" href="tel:+919633367947">(+91) 9633367947</a> , <a
+                            class="text-dark" href="tel:+919072272248"> (+91) 9072272248</a></p>
+                    <p><strong>Email:</strong> <a class="text-dark"
+                            href="mailto:info.smartx3solutions@gmail.com">info.smartx3solutions@gmail.com</a> </p>
                     <p><strong>Address:</strong>7/76 Muthodath Building, Alangad P. O., Aluva</p>
                 </div>
                 <div class="col-md-6">
@@ -233,13 +236,27 @@
             var email = document.getElementById("email").value;
             var service = document.getElementById("service").value;
 
-            var url = "https://wa.me/919633367947?text="
-                + "Name: " + name + "%0a"
-                + "Phone: " + phone + "%0a"
-                + "Email: " + email + "%0a"
-                + "Service: " + service;
+            if (name == "" || phone == "" || email == "" || service == "") {
+                alert("Please fill all the fields");
+                return;
+            }
+            else if (phone.length != 10) {
+                alert("Please enter a valid phone number");
+                return;
+            }
+            else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            else {
+                var url = "https://wa.me/919633367947?text="
+                    + "Name: " + name + "%0a"
+                    + "Phone: " + phone + "%0a"
+                    + "Email: " + email + "%0a"
+                    + "Service: " + service;
 
-            window.open(url, '_blank').focus();
+                window.open(url, '_blank').focus();
+            }
         }
     </script>
 
