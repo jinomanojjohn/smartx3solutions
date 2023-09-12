@@ -10,4 +10,5 @@ This is the code for a landing page website which is for a security solutions pr
  - [Live Website](https://smartx3solutions.com/)
 
 ## Company
-- [@hexameta](https://www.github.com/hexameta)
+- [Hexameta Technologies](https://hexameta.in)
+- [Github:- @hexameta](https://www.github.com/hexameta)
